@@ -31,7 +31,7 @@ header{
 }
 
 .post-img1{
-    background: url("Parcial 1/assets/images/relojFlores");
+    /*background: url("assets/images/relojFlores.jpg");*/
     background-size: cover;
     background-position: center;
     width: 100%;
