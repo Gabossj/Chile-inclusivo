@@ -3,6 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-image: url(../images/rampa.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 
 header{
     position: absolute;
@@ -19,18 +26,25 @@ header{
     align-items: center;
     text-align: center;
     justify-content: center;
-    margin: 100px;
-    background-image: url('assets/images/rampaparaminusvalidos.jpeg');
+    margin: 10%;
 }
 
+
+.titulo-involucrate{
+    background-color: #32ADB2;
+    border-radius: 2px;
+}
 .contenido-involucrate{
     display: grid;
     grid-gap: 35px;
     width: 700px;
-    height: 300px;
-    background-color: rgba(155, 155, 155, 0.5);
+    height: auto;
+    background-color: rgba(155, 155, 155, 0.8);
     border-radius: 25px;
+    position: relative;
 }
+
+
 
 
 /*cambios botones*/
