@@ -17,29 +17,36 @@ body{
     background-color: #32ADB2;
 }
 
-
 .lista-noticias{
-    display: flex;;
-    min-height: 100vh;
+    display: grid;
+    min-height: 100%;
     align-items: center;
     text-align: center;
     justify-content: center;
-    /*background-color: #32ADB2;
-    /*padding: 40px 20px;*/
+    background-color: #32ADB2;
+}
+
+.titulo-contenido{
+    position: relative;
+    width: 258px;
+    height: 50px;
+    left: 500px;
+    top: 100px;
 }
 
 .contenido-noticias{
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-gap: 35px;
-    max-width: 1000px;
-    margin: 100px;
+    max-width: 100%;
+    margin: 10%;
 }
 
 .post{
     box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.3);
     transition: 0.2s;
     background-color: white;
+    border-radius: 25px;
 }
 
 .post-header{
