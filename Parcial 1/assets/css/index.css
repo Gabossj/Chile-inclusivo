@@ -34,7 +34,7 @@ header {
     width: 100%;
 }
   
-.logo img {
+.logo .imagen-logo {
     width: 50%;
     float: left;
 }
@@ -69,7 +69,7 @@ button {
 }
   
 button:hover {
-    background-color: #555;
+    background-color: #555 !important;
 }
 
 .navbar-2 ul {
