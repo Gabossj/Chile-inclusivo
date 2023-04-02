@@ -6,7 +6,6 @@
 }
 
 /* header*/
-
 header {
     display: flex;
     justify-content: space-between;
@@ -16,7 +15,6 @@ header {
     height: 100px;
     left: 0px;
     top: 0px;
-
 }
   
 .navbar-1{
@@ -24,8 +22,8 @@ header {
     align-items: center;
     background-color: #F9E79F;
     width: 100%;
-
 }
+
 .navbar-2 {
     display: flex;
     align-items: center;
@@ -59,38 +57,42 @@ header {
     background-color: purple;
     float: left;
 }
-button {
+
+.boton-index {
     background-color: #3d3d3d;
     color: white;
+}
+  
+.boton-index, .boton-acceder, .boton-donar{
     border: none;
     padding: 8px 16px;
     border-radius: 15px !important;
-    cursor: pointer;
+    cursor: pointer; 
 }
-  
-button:hover {
+
+.botones-index:hover {
     background-color: #555 !important;
 }
 
-.navbar-2 ul {
+.navbar-2-ul {
     display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
 }
   
-.navbar-2 li {
+.navbar-2-li {
     margin-right: 20px;
 }
   
-.navbar-2 a {
+.navbar-2-link {
     color: #3d3d3d;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
 }
   
-.navbar-2 a:hover {
+.navbar-2-link:hover {
     text-decoration: underline;
 }
 
@@ -98,6 +100,10 @@ button:hover {
     float: left;
 }
 
+
+
+
+/*Contenido section*/
 section{
     display: block;
     align-items: center;
@@ -129,7 +135,7 @@ section{
     background: rgba(217, 217, 217, 0.6);
 }
 
-.boton-index{
+.publicaciones-index{
     display: block;
     text-align: center;
     align-items: center;
