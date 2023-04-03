@@ -11,13 +11,99 @@ body{
 }
 
 
-header{
+/* header*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: absolute;
     width: 100%;
     height: 100px;
     left: 0px;
     top: 0px;
-    background: #F9E79F;
+}
+  
+.navbar-1{
+    display: flex;
+    align-items: center;
+    background-color: #F9E79F;
+    width: 100%;
+}
+
+.navbar-2 {
+    display: flex;
+    align-items: center;
+    height: 20% !important;
+    background-color: blue;
+    width: 100%;
+}
+  
+.logo .imagen-logo {
+    width: 50%;
+    float: left;
+}
+  
+.info {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    grid-row: 20px;
+    list-style: none;
+    width: 50%;
+}
+  
+.boton-donar{
+    height: 5%;
+    background-color: red;
+    float: left;
+}
+
+.boton-acceder{
+    height: 5%;
+    background-color: purple;
+    float: left;
+}
+
+.boton-index {
+    background-color: #3d3d3d;
+    color: white;
+}
+  
+.boton-index, .boton-acceder, .boton-donar{
+    border: none;
+    padding: 8px 16px;
+    border-radius: 15px !important;
+    cursor: pointer; 
+}
+
+.botones-index:hover {
+    background-color: #555 !important;
+}
+
+.navbar-2-ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+  
+.navbar-2-li {
+    margin-right: 20px;
+}
+  
+.navbar-2-link {
+    color: #3d3d3d;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+  
+.navbar-2-link:hover {
+    text-decoration: underline;
+}
+
+.navbar-privacidad, .navbar-somos, .navbar-noticias{
+    float: left;
 }
 
 .conteiner-involucrate{
