@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header*/
+header {
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+}
+  
+.navbar-1{
+    display: flex;
+    align-items: center;
+    background-color: #F9E79F;
+    width: 100%;
+}
+
+.navbar-2 {
+    display: flex;
+    align-items: center;
+    height: 20% !important;
+    background-color: blue;
+    width: 100%;
+}
+  
+.logo .imagen-logo {
+    width: 50%;
+    float: left;
+}
+  
+.info {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    grid-row: 20px;
+    list-style: none;
+    width: 50%;
+}
+  
+.boton-donar{
+    height: 5%;
+    background-color: red;
+    float: left;
+}
+
+.boton-acceder{
+    height: 5%;
+    background-color: purple;
+    float: left;
+}
+
+.boton-index {
+    background-color: #3d3d3d;
+    color: white;
+}
+  
+.boton-index, .boton-acceder, .boton-donar{
+    border: none;
+    padding: 8px 16px;
+    border-radius: 15px !important;
+    cursor: pointer; 
+}
+
+.botones-index:hover {
+    background-color: #555 !important;
+}
+
+.navbar-2-ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+  
+.navbar-2-li {
+    margin-right: 20px;
+}
+  
+.navbar-2-link {
+    color: #3d3d3d;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+  
+.navbar-2-link:hover {
+    text-decoration: underline;
+}
+
+.navbar-privacidad, .navbar-somos, .navbar-noticias{
+    float: left;
+}
+
+body{
+    background-color: #32ADB2;
+}
+
+.lista-noticias{
+    display: grid;
+    min-height: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #32ADB2;
+}
+
+.titulo-contenido{
+    position: absolute;
+    width: 258px;
+    height: 50px;
+    left: 1100px;
+    top: 170px;
+}
+
+.contenido-noticias{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 35px;
+    max-width: 100%;
+    margin: 10%;
+}
+
+.post{
+    box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.3);
+    transition: 0.2s;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.post-header{
+    width: 100%;
+    height: 40px;
+}
+
+.post-body{
+    padding: 10px;
+    text-align: center;
+}
+
+.fechas-noticias{
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/*.titulo-noticias{
+    padding: 10px;
+}*/
+
+.noticias-images{
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+}
+
+.btn{
+    background-color: #FFFF00 !important;
+}
+
+.link-boton{
+    color: black;
+}
+
+
+/*Footer*/
+footer{
+    background-color: #202020;
+    color: whitesmoke;
+    width: 100%;
+}
+
+.container-all{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+}
+
+.container-body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.columna1{
+    max-width: 400px;
+}
+
+.columna1 h1{
+    font-size: 22px;
+}
+
+.columna1 p{
+    font-size: 14px;
+    color: #C7c7c7;
+    margin-top: 20px;
+}
+
+.columna2{
+    max-width: 400px;
+}
+
+.columna2 h1{
+    font-size: 22px;
+}
+
+.columna2 .row{
+    margin-top: 20px;
+    display: flex;
+}
+
+.row{
+    margin-top: 20px;
+    display: flex;
+}
+
+.row img{
+    width: 36px;
+    height: 36px;
+}
+
+.row label{
+    margin: 10px;
+    margin-left: 20px;
+    color: #c7c7c7;
+}
+
+.columna3{
+    max-width: 400px;
+
+}
+
+.columna3 h1{
+    font-size: 22px;
+}
+
+.row2{
+    margin-top: 20px;
+    display: flex;
+}
+
+.row2 img{
+    width: 36px;
+    height: 36px;
+}
+
+.row2 label{
+    margin-left: 20px;
+    margin-top: 10px;
+    max-width: 140px;
+}
+
+.container-footer{
+    width: 100%;
+    background-color: #101010;
+}
+
+.footer{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.copyright{
+    color: #C7c7c7;
+}
+
+
+.copyright a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.informatio{
+    text-decoration: none;
+    color: white;
+}
