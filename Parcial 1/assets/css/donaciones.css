@@ -18,81 +18,8 @@ body{
     background-color: rgba(255, 255, 0, 0.4);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     opacity: 0.89;
-    padding: -54px;
-}
-
-.cajita{
-    background-color: black;
-    opacity: 0.70;
-
-}
-.cajita label{
-    color: whitesmoke;
-}
-form{
-    padding: 20px 25px; 
-    border-radius: 20px;
-    text-align: center;
-    width: 350px;
-    height: 300px;
-    cursor: pointer;
-}
-
-.montos{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-.centerDonacion{
-    text-align: center;
-    width: 100px;
-    height: 20px;
-    margin: 5px;
-    padding: auto;
-    align-items: center;
-    color: whitesmoke;
-}
-.opcionesDonacion{
-    list-style-type: none;
-    margin: auto;
-    padding: 0 0 0 0;
-}
-
-.botonDonar{
-    position: absolute;
-    width: 350px;
-    height: 83px;
-    background: #BFBF00;
-    left: 870px;
-
-}
-
-
-li{
-    float: left;
-    padding: 10px 5px;
-    margin: auto;
-}
-
-label{
-    color: black;
-    font-size: 15px;
-    font-weight: 600;
-}
-
-input, textarea{
-    padding: 17px 25px;
-    border-radius: 25px;
-    margin-bottom: 20px;
-    background-color: #edfff0;
-    border: 2px solid #f0faf1;
-    color: #283629;
-    outline: none;
-}
-
-input ::placeholder, textarea ::placeholder{
-    color: #b5cabd;
+    /* padding: -54px; */
+    margin-bottom: 5rem;
 
 }
 
@@ -101,11 +28,9 @@ input ::placeholder, textarea ::placeholder{
     padding: 10px 5px;
 }
 
-.form-txt{
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
+.contenedor-donaciones{
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 10rem 20rem 10rem 20rem ;
 }
 
 /*No redimensiona la imagen, arreglar*/
