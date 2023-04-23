@@ -102,6 +102,7 @@ body{
     background-color: #32ADB2;
 }
 
+/* contenido */
 .lista-noticias{
     display: grid;
     min-height: 100%;
@@ -111,37 +112,55 @@ body{
     background-color: #32ADB2;
 }
 
-.titulo-contenido{
-    position: absolute;
-    width: 258px;
-    height: 50px;
-    left: 1100px;
-    top: 170px;
+.titulo-contenido {
+    text-align: center;
+    margin-top: 8rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.titulo-contenido h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #333;
+    margin: 0;
 }
 
 .contenido-noticias{
     display: grid;
+    justify-content: center;
     grid-template-columns: 33% 33% 33%;
-    grid-gap: 35px;
+    grid-gap: 2rem !important;
     max-width: 100%;
-    margin: 10%;
+    margin: 5% 8% 20% 15% !important;
+    height: 70%;
 }
 
 .post{
     box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.3);
     transition: 0.2s;
     background-color: white;
-    border-radius: 25px;
+    border-radius: 2rem;
+}
+
+.post img {
+    max-width: 100%;
+    height: auto;
 }
 
 .post-header{
     width: 100%;
-    height: 40px;
+    height: 5%;
 }
 
 .post-body{
     padding: 10px;
     text-align: center;
+    margin-bottom: 15rem;
+}
+
+.post-body h3{
+    height: 30% !important;
 }
 
 .fechas-noticias{
@@ -149,14 +168,10 @@ body{
     margin-bottom: 10px;
 }
 
-/*.titulo-noticias{
-    padding: 10px;
-}*/
-
 .noticias-images{
-    width: 300px;
-    height: 150px;
-    margin: 10px;
+    width: 20rem !important;
+    height: 15rem !important;
+    margin: auto;
 }
 
 .btn{
@@ -166,7 +181,6 @@ body{
 .link-boton{
     color: black;
 }
-
 
 /*Footer*/
 footer{
@@ -270,7 +284,6 @@ footer{
 .copyright{
     color: #C7c7c7;
 }
-
 
 .copyright a{
     text-decoration: none;
