@@ -1,3 +1,18 @@
+// ------------ cookies --------------------
+$(document).ready(function() {
+  $("#contact-form").submit(function(event) {
+    //se evita recargar la pagina 
+    event.preventDefault();
+  });
+  //ocultamos banner luego de aceptar
+  $("#cookie-accept").click(function() {
+    $("#cookie-banner").slideUp();
+    localStorage.setItem("cookiesAccepted", "true");
+  });
+});
+
+
+
 // ------------ comentarios ----------------
 
 const commentBtn = document.querySelector('.post-comment-btn');

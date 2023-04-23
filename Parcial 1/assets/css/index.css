@@ -61,7 +61,7 @@ header {
     background-color: #3d3d3d;
     color: white;
 }
-  
+
 .boton-index, .boton-acceder, .boton-donar{
     border: none;
     padding: 8px 16px;
@@ -98,6 +98,29 @@ header {
 .navbar-privacidad, .navbar-somos, .navbar-noticias{
     float: left;
 }
+
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFF000;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+#cookie-accept {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 15px !important;
+    cursor: pointer;
+}
+
+  
 
 
 
