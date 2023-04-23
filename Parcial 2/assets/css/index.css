@@ -99,32 +99,6 @@ header {
     float: left;
 }
 
-#cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #FFF000;
-    padding: 1em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-  
-#cookie-accept {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 15px !important;
-    cursor: pointer;
-}
-
-  
-
-
-
-
 /*Contenido section*/
 section{
     display: block;
@@ -167,6 +141,14 @@ section{
     transform: translate(-50%, -120%);
 }
 
+
+/*div cookies*/
+#cookieBanner {
+    background-color: yellow !important;
+}
+#aceptarCookies {
+    background-color: gray !important;
+}
 
 
 /*Footer*/

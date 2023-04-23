@@ -1,16 +1,16 @@
 // ------------ cookies --------------------
-$(document).ready(function() {
-  $("#contact-form").submit(function(event) {
-    //se evita recargar la pagina 
-    event.preventDefault();
-  });
+$(document).ready(function () {
+  const cookieAccepted = localStorage.getItem('cookieAccepted');
+
+  if (!cookieAccepted) {
+    $('#cookieBanner').removeClass('d-none');
+  }
   //ocultamos banner luego de aceptar
-  $("#cookie-accept").click(function() {
-    $("#cookie-banner").slideUp();
-    localStorage.setItem("cookiesAccepted", "true");
+  $('#aceptarCookies').on('click', function () {
+    localStorage.setItem('cookieAccepted', 'true');
+    $('#cookieBanner').addClass('d-none');
   });
 });
-
 
 
 // ------------ comentarios ----------------
