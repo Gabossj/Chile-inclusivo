@@ -1,5 +1,5 @@
 *{
-    margin: 0;
+    margin: auto;
     padding: 0;
     box-sizing: border-box;
 }
@@ -32,26 +32,22 @@ header {
   
 .logo .imagen-logo {
     width: 50%;
-    float: left;
 }
   
 .info {
     display: flex;
     flex-direction: row;
     margin: 20px;
-    grid-row: 20px;
     list-style: none;
     width: 50%;
 }
   
 .boton-donar{
-    height: 5%;
     background-color: red;
     float: left;
 }
 
 .boton-acceder{
-    height: 5%;
     background-color: purple;
     float: left;
 }

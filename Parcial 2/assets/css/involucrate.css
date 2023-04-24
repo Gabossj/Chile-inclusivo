@@ -1,5 +1,5 @@
 *{
-    margin: 0;
+    margin: auto;
     padding: 0;
     box-sizing: border-box;
 }
@@ -8,6 +8,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 100% 100%;
 }
 
 
@@ -119,14 +120,15 @@ header {
     background-color: #32ADB2;
     border-radius: 2px;
 }
+
 .contenido-involucrate{
     display: grid;
     grid-gap: 35px;
-    width: 700px;
+    width: 100%;
     height: auto;
     background-color: rgba(155, 155, 155, 0.8);
     border-radius: 25px;
-    position: relative;
+
 }
 
 
