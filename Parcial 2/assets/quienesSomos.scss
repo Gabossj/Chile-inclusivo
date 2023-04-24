@@ -1,0 +1,280 @@
+* {
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  body {
+    width: 100%;
+  }
+  
+  .container {
+    & .titulo {
+      text-align: center;
+      padding-bottom: 50px;
+    }
+  
+    strong {
+      font-weight: bold;
+    }
+  
+    margin-top: 130px;
+  
+    & .titulo-qs {
+      text-align: center;
+      margin-top: 100px;
+    }
+  
+    & .texto {
+      text-align: center;
+      font-size: 18px;
+      font-size: 23px;
+    }
+  }
+  
+  .container-form {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    text-align: center;
+  }
+  
+  header {
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+  }
+  
+  .navbar-1 {
+    display: flex;
+    align-items: center;
+    background-color: #F9E79F;
+    width: 100%;
+  }
+  
+  .navbar-2 {
+    display: flex;
+    align-items: center;
+    height: 20% !important;
+    background-color: blue;
+    width: 100%;
+  }
+  
+  #navbar-menu {
+    &.show {
+      display: block;
+    }
+  }
+  
+  .logo {
+    & .imagen-logo {
+      width: 50%;
+      float: left;
+    }
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    grid-row: 20px;
+    list-style: none;
+    width: 50%;
+  }
+  
+  .boton-donar {
+    height: 5%;
+    background-color: red;
+    float: left;
+  }
+  
+  .boton-acceder {
+    height: 5%;
+    background-color: purple;
+    float: left;
+  }
+  
+  .boton-index {
+    background-color: #3d3d3d;
+    color: white;
+  }
+  
+  .boton-index,
+  .boton-acceder,
+  .boton-donar {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 15px !important;
+    cursor: pointer;
+  }
+  
+  .botones-index:hover {
+    background-color: #555 !important;
+  }
+  
+  .navbar-2-ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .navbar-2-li {
+    margin-right: 20px;
+  }
+  
+  .navbar-2-link {
+    color: #3d3d3d;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .navbar-privacidad,
+  .navbar-somos,
+  .navbar-noticias {
+    float: left;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #D9D9D9;
+  }
+  
+  form input {
+    margin-bottom: 10px;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button {
+    text-align: center;
+  }
+  
+  // Footer
+  footer {
+    background-color: #202020;
+    color: whitesmoke;
+    width: 100%;
+  }
+  
+  .container-all {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+  }
+  
+  .container-body {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .columna1,
+  .columna2,
+  .columna3 {
+    max-width: 400px;
+  }
+  
+  .columna1 h1,
+  .columna2 h1,
+  .columna3 h1 {
+    font-size: 22px;
+  }
+  
+  .columna1 p {
+    font-size: 14px;
+    color: #C7c7c7;
+    margin-top: 20px;
+  }
+  
+  .columna2 .row,
+  .columna3 .row2 {
+    margin-top: 20px;
+    display: flex;
+  }
+  
+  .row,
+  .row2 {
+    img {
+      width: 36px;
+      height: 36px;
+    }
+  
+    label {
+      margin: 10px;
+      margin-left: 20px;
+      color: #c7c7c7;
+    }
+  }
+  
+  .row2 label {
+    margin-left: 20px;
+    margin-top: 10px;
+    max-width: 140px;
+  }
+  
+  .container-footer {
+    width: 100%;
+    background-color: #101010;
+  }
+  
+  .footer {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .copyright {
+    color: #C7c7c7;
+  
+    a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+  }
+  
+  .informatio {
+    text-decoration: none;
+    color: white;
+  }
+  
