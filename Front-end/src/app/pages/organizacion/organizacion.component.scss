@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5dfbd; 
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto; // Aumento del margen superior e inferior
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+
+    .titulo-qs {
+        text-align: center;
+        color: #333;
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .container-text {
+        h2 {
+            font-size: 1.5em;
+            color: #742323;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: justify;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+    }
+}

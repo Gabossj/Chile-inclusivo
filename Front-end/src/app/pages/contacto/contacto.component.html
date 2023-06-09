@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="texto">
+        <h1 class="titulo"> Contactar</h1>
+        <p>Si tienes alguna retroalimentación hacia nuestra página, escríbenos a: <strong>gest@chileinclusivo.org</strong></p>
+        <br>
+        <p>También puedes llamarnos al télefono gratuito 600 999 817
+            (te atendemos de lunes a viernes, de 9:30 a 20:00)</p>
+        <br>
+        <p>Para otros casos, completa el siguiente formulario:</p>
+        <br>
+        <br>
+    </div>
+    <div class="container-form">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <ul id="campos-form">
+                <li>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="text" formControlName="nombreCompleto" placeholder="Nombre">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="email" formControlName="correo" placeholder="Correo electrónico">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="text" formControlName="asunto" placeholder="Asunto">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <textarea formControlName="mensaje" cols="30" rows="10" placeholder="mensaje"></textarea>
+                        </div>
+                    </div>
+                </li>
+                <div class="col-12">
+                    <button type="submit" [disabled]="!contactForm.valid">Enviar</button>
+                </div>
+            </ul>
+        </form>
+    </div>
+</div>
