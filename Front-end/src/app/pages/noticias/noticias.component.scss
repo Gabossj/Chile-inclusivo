@@ -1,0 +1,106 @@
+#carousel-section {
+    .carousel {
+      .carousel-indicators {
+        button {
+          width: 12px;
+          height: 12px;
+          background-color: #fff;
+          opacity: 0.5;
+  
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+  
+      .carousel-inner {
+        .carousel-item {
+          img {
+            border-radius: 5px;
+          }
+  
+          .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+  
+            h5 {
+              color: #fff;
+              font-size: 1.25rem;
+            }
+  
+            p {
+              color: #fff;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  #line-with-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #333;
+    margin: 50px 0;
+    font-size: 1.5em; // Aumenta el tamaño de la fuente
+    font-weight: bold; // Hace que el texto sea en negrita
+    text-transform: uppercase; // Hace que el texto sea en mayúsculas
+  
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      border-bottom: 2px solid #333; // Aumenta el grosor de la línea
+    }
+  
+    &::before {
+      margin-right: .5em;
+    }
+  
+    &::after {
+      margin-left: .5em;
+    }
+  }
+  
+  
+  #cards-section {
+    display: flex; // Esto hace que las tarjetas se muestren en línea
+    justify-content: space-between; // Esto añade espacio igual entre las tarjetas
+    padding: 0 20px; // Esto añade padding a los lados del contenedor de las tarjetas
+    
+    .card {
+      width: calc((100% - 40px) / 3); // Esto hace que las tarjetas tengan el mismo ancho y se ajusten al contenedor
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  
+      .card-img-top {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+  
+      .card-body {
+        .card-text {
+          color: #333;
+  
+          small {
+            color: #6c757d;
+          }
+        }
+  
+        .card-title {
+          color: #333;
+          font-size: 1.25rem;
+        }
+  
+        .btn {
+          color: #fff;
+          background-color: #007bff;
+          border-color: #007bff;
+        }
+      }
+    }
+  }
+  
+  

@@ -1,0 +1,48 @@
+.container {
+    /* Estilos para el contenedor principal */
+    margin: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .eslogan {
+    /* Estilos para el eslogan */
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .contenedor-donaciones {
+    /* Estilos para el contenedor de donaciones */
+    margin-top: 20px;
+  }
+  
+  #donate-button-container {
+    /* Estilos para el contenedor del botón de donación */
+    text-align: center;
+  }
+  
+  #donate-button {
+    /* Estilos para el botón de donación */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .textPolPriv {
+    /* Estilos para el texto de política de privacidad */
+    font-size: 14px;
+    color: #666;
+    margin-top: 20px;
+  }
+  
+  a {
+    /* Estilos para el enlace */
+    color: #007bff;
+    text-decoration: none;
+  }
+  

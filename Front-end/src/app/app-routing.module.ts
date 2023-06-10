@@ -11,7 +11,7 @@ import { OrganizacionComponent } from './pages/organizacion/organizacion.compone
 import { PoliticasComponent } from './pages/politicas/politicas.component';
 
 const routes: Routes = [
-  {path:'donaciones',component:DonacionComponent},
+  {path:'donacion',component:DonacionComponent},
   {path:'login', component:LoginComponent},
   {path:'contacto', component:ContactoComponent},
   {path:'noticias', component:NoticiasComponent},
