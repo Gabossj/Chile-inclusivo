@@ -1,33 +1,18 @@
-<div class="container">
-    <div class="lastBox">
-        <div class="caja__trasera-login">
-            <h3>¿Ya tienes una cuenta?</h3>
-            <p>Inicia sesión para entrar en la página</p>
-            <button id="btn__iniciar-sesion" (click)="iniciarSesion()">Iniciar sesión</button>
+<div class="wrapper">
+    <div class="body">
+        <img class="logo" src="../../../assets/images/usuario.png" alt="">
+        <h1>Login</h1>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" placeholder="Ingrese mail">
+            <label>Correo electrónico</label>
         </div>
-        <div class="lastbox-register">
-            <h3>¿Aún no tienes una cuenta?</h3>
-            <p>Regístrate para que puedas iniciar sesión</p>
-            <button id="btn__registrarse" (click)="register()">Registrarse</button>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" placeholder="Ingrese contraseña">
+            <label>Correo electrónico</label>
         </div>
-    </div>
-    <!--Formulario de Login y registro-->
-    <div class="contenedor__login-register">
-        <!--Login-->
-        <form action="" class="login">
-            <h2>Iniciar Sesión</h2>
-            <input type="text" placeholder="Correo Electronico">
-            <input type="password" placeholder="Contraseña">
-            <button>Entrar</button>
-        </form>
-        <!--Register-->
-        <form action="" class="register">
-            <h2>Regístrarse</h2>
-            <input type="text" placeholder="Nombre completo" name="nombre_completo">
-            <input type="text" placeholder="Correo Electronico" name="correo">
-            <input type="text" placeholder="Usuario" name="usuario">
-            <input type="password" placeholder="Contraseña" name="contrasena">
-            <button>Regístrarse</button>
-        </form>
+        <div class="d-grid gap-2">
+            <button type="button" class="btn btn-primary btn-lg">Acceder</button>
+        </div>
+        <p class="mt-3">¿No tienes cuenta? <a [routerLink]="['registro']">Resgitrar</a></p>
     </div>
 </div>

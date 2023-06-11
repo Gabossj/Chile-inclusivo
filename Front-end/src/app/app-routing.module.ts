@@ -11,6 +11,7 @@ import { OrganizacionComponent } from './pages/organizacion/organizacion.compone
 import { PoliticasComponent } from './pages/politicas/politicas.component';
 
 const routes: Routes = [
+  // {path: '', redirectTo: 'inicio', pathMatch: 'full'},
   {path:'donacion',component:DonacionComponent},
   {path:'login', component:LoginComponent},
   {path:'contacto', component:ContactoComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:'organizacion', component:OrganizacionComponent},
   {path:'politicas', component:PoliticasComponent},
   {path:'inicio', component:InicioComponent},
+  // {path: '**', redirectTo: 'inicio', pathMatch: 'full'}
 ];
 
 @NgModule({

@@ -1,71 +1,25 @@
-import { Component, AfterViewInit, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app.login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements AfterViewInit {
+export class LoginComponent {
+  formData = {
+    email: '',
+    password: ''
+  };
 
-  private loginVisible: boolean = false;
-  private registerVisible: boolean = false;
-  private containerVisible: boolean = false;
-  private lastBoxLoginVisible: boolean = false;
-  private lastBoxRegisterVisible: boolean = false;
-
-  constructor() {}
-
-  ngAfterViewInit(): void {
-    this.widthPage();
-  }
-
-  widthPage() {
-    if (window.innerWidth > 850) {
-      this.lastBoxRegisterVisible = true;
-      this.lastBoxLoginVisible = true;
-    } else {
-      this.lastBoxRegisterVisible = true;
-      this.lastBoxLoginVisible = false;
-      this.loginVisible = true;
-      this.containerVisible = true;
-      this.registerVisible = false;
+  submitForm() {
+    if (this.isValidForm()) {
+      // Realizar acciones necesarias si el formulario es válido
+      console.log('Formulario válido', this.formData);
     }
   }
 
-  @HostListener('window:resize')
-  onResize() {
-    this.widthPage();
+  isValidForm(): boolean {
+    // Verificar si los campos requeridos están completos
+    return this.formData.email !== '' && this.formData.password !== '';
   }
-
-  iniciarSesion() {
-    if (window.innerWidth > 850) {
-      this.loginVisible = true;
-      this.containerVisible = false; // Ocultar el contenedor
-      this.registerVisible = false;
-      this.lastBoxLoginVisible = false;
-    } else {
-      this.loginVisible = true;
-      this.containerVisible = false; // Ocultar el contenedor
-      this.registerVisible = false;
-      this.lastBoxRegisterVisible = true;
-      this.lastBoxLoginVisible = false;
-    }
-  }
-  
-  register() {
-    if (window.innerWidth > 850) {
-      this.registerVisible = true;
-      this.containerVisible = false; // Ocultar el contenedor
-      this.loginVisible = false;
-      this.lastBoxRegisterVisible = false;
-      this.lastBoxLoginVisible = false;
-    } else {
-      this.registerVisible = true;
-      this.containerVisible = false; // Ocultar el contenedor
-      this.loginVisible = false;
-      this.lastBoxRegisterVisible = false;
-      this.lastBoxLoginVisible = false;
-    }
-  }
-  
 }

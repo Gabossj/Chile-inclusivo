@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentesComponent } from './componentes/componentes.component';
@@ -17,8 +16,9 @@ import { PoliticasComponent } from './pages/politicas/politicas.component';
 import { PublicacionesComponent } from './pages/publicaciones/publicaciones.component';
 import { OrganizacionComponent } from './pages/organizacion/organizacion.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistroComponent } from './pages/registro/registro.component';
 
 
 @NgModule({
@@ -36,15 +36,15 @@ import { HttpClientModule } from '@angular/common/http';
     NoticiasComponent,
     PoliticasComponent,
     PublicacionesComponent,
-    OrganizacionComponent
+    OrganizacionComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    MatSnackBarModule,
-    BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
