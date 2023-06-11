@@ -1,28 +1,30 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import {FormGroup,FormBuilder,Validators,AbstractControl} from '@angular/forms';
 
 @Component({
-  selector: 'app.login',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+  formulario:FormGroup;
+  email: AbstractControl;
+  password:AbstractControl;
 
-  login: FormGroup;
-
-  constructor(private formBuilder: FormBuilder) {
-    this.login = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+  constructor(private form:FormBuilder) {
+    this.formulario=this.form.group({
+      email:['',[Validators.required,Validators.email]],
+      password: ['', Validators.required]
     });
+    this.email= this.formulario.controls['email'];  
+    this.password=this.formulario.controls['password'];
+   }
+
+  ngOnInit(): void {
   }
 
-  enviarFormulario() {
-    if (this.login.valid) {
-      // Lógica para enviar el formulario
-      console.log("test")
-    } else {
-      // Muestra un mensaje de error o realiza acciones adicionales si el formulario no es válido
-    }
+  contacto(){
+
   }
+
 }
