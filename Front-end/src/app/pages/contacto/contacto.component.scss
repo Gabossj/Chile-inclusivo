@@ -3,9 +3,14 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f3f3f3; 
-    padding: 20px;
+    // padding: 20px;
 }
 
+.wrapper{
+    background-image: url(../../../assets/images/rampa.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .container {
     max-width: 800px;
     margin: 50px auto;
