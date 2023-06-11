@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app.login',
@@ -6,20 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  formData = {
-    email: '',
-    password: ''
-  };
 
-  submitForm() {
-    if (this.isValidForm()) {
-      // Realizar acciones necesarias si el formulario es válido
-      console.log('Formulario válido', this.formData);
-    }
+  login: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.login = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+    });
   }
 
-  isValidForm(): boolean {
-    // Verificar si los campos requeridos están completos
-    return this.formData.email !== '' && this.formData.password !== '';
+  enviarFormulario() {
+    if (this.login.valid) {
+      // Lógica para enviar el formulario
+      console.log("test")
+    } else {
+      // Muestra un mensaje de error o realiza acciones adicionales si el formulario no es válido
+    }
   }
 }

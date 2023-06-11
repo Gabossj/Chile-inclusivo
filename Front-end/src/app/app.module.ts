@@ -44,7 +44,6 @@ import { RegistroComponent } from './pages/registro/registro.component';
     AppRoutingModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    BrowserAnimationsModule,
     HttpClientModule
   ],
   providers: [],

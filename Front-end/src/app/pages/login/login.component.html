@@ -1,18 +1,29 @@
 <div class="wrapper">
     <div class="body">
         <img class="logo" src="../../../assets/images/usuario.png" alt="">
-        <h1>Login</h1>
+        <h1>Inicio sesion</h1>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" placeholder="Ingrese mail">
-            <label>Correo electrónico</label>
+            <input type="email" class="form-control" id="email" formControlName="email" placeholder="Ingrese correo" [ngClass]="{ 'invalid-field': login.controls['email'].invalid && (login.controls['email'].dirty || login.controls['email'].touched) }" >
+            <label for="email">Correo electrónico</label>
+        
+            <div *ngIf="login.controls['email'].invalid && (login.controls['email'].dirty || login.controls['email'].touched)" class="error-message">
+                <div *ngIf="login.controls['email']?.errors?.['required']">Email es requerido.</div>
+                <div *ngIf="login.controls['email']?.errors?.['email']">Email debe ser válido.</div>
+            </div>
         </div>
         <div class="form-floating mb-3">
-            <input type="password" class="form-control" placeholder="Ingrese contraseña">
-            <label>Correo electrónico</label>
+
+            <input type="password" class="form-control" id="password" formControlName="password" placeholder="Ingrese contraseña" [ngClass]="{ 'invalid-field': login.controls['email'].invalid && (login.controls['password'].dirty || login.controls['passwrod'].touched) }" >
+            <label for="password">Contraseña</label>
+        
+            <div *ngIf="login.controls['password'].invalid && (login.controls['password'].dirty || login.controls['password'].touched)" class="error-message">
+                <div *ngIf="login.controls['password']?.errors?.['required']">Contraseña es requerido.</div>
+                <div *ngIf="login.controls['password']?.errors?.['password']">Contraseña debe ser válido.</div>
+            </div>
         </div>
         <div class="d-grid gap-2">
-            <button type="button" class="btn btn-primary btn-lg">Acceder</button>
+            <button type="submit" class="btn btn-primary btn-lg" [disabled]="login.invalid">Acceder</button>
         </div>
-        <p class="mt-3">¿No tienes cuenta? <a [routerLink]="['registro']">Resgitrar</a></p>
+        <p class="mt-3">¿No tienes cuenta? <a [routerLink]="['registro']">Registrar</a></p>
     </div>
 </div>

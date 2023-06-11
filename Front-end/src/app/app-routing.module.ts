@@ -9,6 +9,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { InvolucrateComponent } from './pages/involucrate/involucrate.component';
 import { OrganizacionComponent } from './pages/organizacion/organizacion.component';
 import { PoliticasComponent } from './pages/politicas/politicas.component';
+import { RegistroComponent } from './pages/registro/registro.component';
 
 const routes: Routes = [
   // {path: '', redirectTo: 'inicio', pathMatch: 'full'},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:'organizacion', component:OrganizacionComponent},
   {path:'politicas', component:PoliticasComponent},
   {path:'inicio', component:InicioComponent},
+  {path:'registro', component:RegistroComponent},
   // {path: '**', redirectTo: 'inicio', pathMatch: 'full'}
 ];
 
