@@ -16,7 +16,7 @@ import { PoliticasComponent } from './pages/politicas/politicas.component';
 import { PublicacionesComponent } from './pages/publicaciones/publicaciones.component';
 import { OrganizacionComponent } from './pages/organizacion/organizacion.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistroComponent } from './pages/registro/registro.component';
 
@@ -43,8 +43,9 @@ import { RegistroComponent } from './pages/registro/registro.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    FormsModule
+    MatSnackBarModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
