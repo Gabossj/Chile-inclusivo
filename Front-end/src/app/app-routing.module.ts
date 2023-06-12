@@ -13,6 +13,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
 
 const routes: Routes = [
   // {path: '', redirectTo: 'inicio', pathMatch: 'full'},
+  {path:'', redirectTo: 'inicio', pathMatch: 'full'},
   {path:'donacion',component:DonacionComponent},
   {path:'login', component:LoginComponent},
   {path:'contacto', component:ContactoComponent},
