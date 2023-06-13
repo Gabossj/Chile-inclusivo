@@ -15,7 +15,7 @@ export class ContactoComponent {
       nombre: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       asunto: ['', Validators.required],
-      mensaje: ['', Validators.required]
+      mensaje: ['', [Validators.required, Validators.maxLength(5)]]
     });
   }
 
