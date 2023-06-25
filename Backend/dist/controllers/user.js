@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.loginUser = exports.newUser = void 0;
+exports.updateUser = exports.loginUser = exports.newUser = void 0;
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const user_1 = require("../models/user");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
@@ -77,3 +77,25 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.json({ token });
 });
 exports.loginUser = loginUser;
+const updateUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { usuario, email, password } = req.body;
+    const user = yield user_1.User.findOne({ where: { usuario } });
+    if (user) {
+        user.usuario = usuario || user.usuario;
+        user.email = email || user.email;
+        if (password) {
+            user.password = yield bcrypt_1.default.hash(password, 10);
+        }
+        yield user.save();
+        res.json({
+            msg: `Haz modificado tus datos de manera exitosa`,
+            data: user
+        });
+    }
+    else {
+        res.status(404).json({
+            msg: `El usuario no ha sido encontrado`
+        });
+    }
+});
+exports.updateUser = updateUser;

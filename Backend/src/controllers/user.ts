@@ -82,3 +82,29 @@ export const loginUser = async (req: Request, res: Response) => {
 
     res.json({token});
 }
+
+export const updateUser = async (req: Request, res: Response) => {
+    const { usuario, email, password} = req.body;
+    const user: any = await User.findOne({ where: { usuario} });
+
+    if(user){
+        user.usuario = usuario || user.usuario;
+        user.email = email || user.email;
+
+        if(password){
+            user.password = await bcrypt.hash(password,10);
+        }
+
+        await user.save();
+
+        res.json({
+            msg: `Haz modificado tus datos de manera exitosa`,
+            data: user
+        });
+    }else {
+        res.status(404).json({
+            msg: `El usuario no ha sido encontrado`
+        })
+    }
+
+}

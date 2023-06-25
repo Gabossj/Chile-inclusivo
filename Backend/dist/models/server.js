@@ -23,7 +23,7 @@ class Server {
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || '3001';
         this.listen();
-        this.midlewares();
+        this.middlewares();
         this.routes();
         this.dbConnect();
     }
@@ -35,7 +35,7 @@ class Server {
     routes() {
         this.app.use('/api/users', user_1.default);
     }
-    midlewares() {
+    middlewares() {
         this.app.use(express_1.default.json());
         this.app.use((0, cors_1.default)());
     }

@@ -27,6 +27,7 @@ export const User = sequelize.define('user', {
 
     rol:{
         type: DataTypes.STRING,
+        defaultValue: 'usuario',
         allowNull: false
     }
 

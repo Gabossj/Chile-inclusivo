@@ -12,7 +12,7 @@ export class Server{
         this.app = express();
         this.port = process.env.PORT || '3001';
         this.listen();
-        this.midlewares();
+        this.middlewares();
         this.routes();
         this.dbConnect();
     }
@@ -27,7 +27,7 @@ export class Server{
         this.app.use('/api/users',routesUser);
     }
 
-    midlewares(){
+    middlewares(){
         this.app.use(express.json());
         this.app.use(cors())
     }

@@ -25,5 +25,10 @@ exports.User = conection_1.default.define('user', {
     password: {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false
+    },
+    rol: {
+        type: sequelize_1.DataTypes.STRING,
+        defaultValue: 'usuario',
+        allowNull: false
     }
 });

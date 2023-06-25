@@ -33,12 +33,13 @@ export class LoginComponent implements OnInit {
     }
 
     this._userService.login(user).subscribe({
-      next: (data) => {
-        // localStorage.setItem('token', token);
-        // this.router.navigate(['./inicio']);
-        console.log(data);
+      next: (response) => {
+        const token = JSON.stringify(response); // Convierte el objeto del token a una cadena de texto
+        localStorage.setItem('token', token);
+        this.router.navigate(['./inicio']);
       }
-    })
+    });
+    
   }
 
 }
