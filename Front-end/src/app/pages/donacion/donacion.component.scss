@@ -1,0 +1,45 @@
+.wrapper{
+  background-image: url(../../../assets/images/fondoDonaciones.png);
+  background-size: cover;
+  padding: 300px;
+}
+
+
+
+.container {
+    /* Estilos para el contenedor principal */
+    margin: auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+
+    .eslogan {
+      /* Estilos para el eslogan */
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .contenedor-donaciones {
+      margin-top: 20px;
+    }
+    .textPolPriv {
+      /* Estilos para el texto de política de privacidad */
+      font-size: 14px;
+      color: #666;
+      margin-top: 20px;
+    }
+    
+    a {
+      /* Estilos para el enlace */
+      color: #007bff;
+      text-decoration: none;
+    }
+    
+    .btn, btn-primary, btn-sm{
+      width: auto;
+      max-height: max-content;
+      padding: auto;
+    }
+  }
+  

@@ -1,0 +1,83 @@
+.banner{
+    width: 100%;
+    height: 300px;
+    background-image: url(../../../assets/images/Nota1-_auto_x2.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: flex-end;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.banner h1{
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+.banner p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.container{
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.text-card{
+    height: 30rem ;
+}
+
+.container-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    .card-1, .card-2, .card-3, .card-4 {
+        width: 20%;
+        margin: 20px;
+        padding: 20px;
+        background-color:#f8f9fa;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        h2 {
+            font-size: 1.5em;
+            color: #333;
+        }
+        p {
+            padding: 10px;
+            font-size: 1em;
+            color: #666;
+            text-align: justify;
+        }
+        button {
+            cursor: pointer;
+        }
+    }
+
+    .card-1 {
+        background-size: cover;
+        background-position: center;
+    }
+    .card-2 {
+        background-size: cover;
+        background-position: center;
+    }
+    .card-3 {
+        background-size: cover;
+        background-position: center;
+    }
+    .card-4 {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+img{
+    width: 12rem;
+}

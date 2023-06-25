@@ -1,0 +1,67 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="texto">
+      <h1 class="titulo">Contactar</h1>
+      <p>Si tienes alguna retroalimentación hacia nuestra página, escríbenos a: <strong>gest@chileinclusivo.org</strong></p>
+      <br>
+      <p>También puedes llamarnos al télefono gratuito 600 999 817 (te atendemos de lunes a viernes, de 9:30 a 20:00)</p>
+      <br>
+      <p>Para otros casos, completa el siguiente formulario:</p>
+      <br>
+      <br>
+    </div>
+
+    <div class="container-form">
+        <form [formGroup]="formularioContacto" (ngSubmit)="enviarFormulario()">
+          <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" formControlName="nombre" [ngClass]="{ 'invalid-field': formularioContacto.controls['nombre'].invalid && (formularioContacto.controls['nombre'].dirty || formularioContacto.controls['nombre'].touched) }">
+            <div *ngIf="formularioContacto.controls['nombre'].invalid && (formularioContacto.controls['nombre'].dirty || formularioContacto.controls['nombre'].touched)" class="error-message">
+              <div *ngIf="formularioContacto.controls['nombre'].errors?.['required']">Nombre es requerido.</div>
+            </div>
+          </div>
+
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" formControlName="email" [ngClass]="{ 'invalid-field': formularioContacto.controls['email'].invalid && (formularioContacto.controls['email'].dirty || formularioContacto.controls['email'].touched) }" >
+        
+            <div *ngIf="formularioContacto.controls['email'].invalid && (formularioContacto.controls['email'].dirty || formularioContacto.controls['email'].touched)" class="error-message">
+                <div *ngIf="formularioContacto.controls['email']?.errors?.['required']">Email es requerido.</div>
+                <div *ngIf="formularioContacto.controls['email']?.errors?.['email']">Email debe ser válido.</div>
+            </div>
+          </div>
+
+          <div>
+            <label for="asunto">Asunto:</label>
+            <input type="text" id="asunto" formControlName="asunto"[ngClass]="{ 'invalid-field': formularioContacto.controls['asunto'].invalid && (formularioContacto.controls['asunto'].dirty || formularioContacto.controls['asunto'].touched) }">
+        
+            <div *ngIf="formularioContacto.controls['asunto'].invalid && (formularioContacto.controls['asunto'].dirty || formularioContacto.controls['asunto'].touched)" class="error-message">
+              <div *ngIf="formularioContacto.controls['asunto']?.errors?.['required']">Asunto es requerido.</div>
+            </div>
+          </div>
+
+          <!-- <div>
+            <label for="mensaje">Mensaje:</label>
+            <input type="text" id="mensaje" formControlName="mensaje" [ngClass]="{ 'invalid-field': formularioContacto.controls['mensaje'].invalid && (formularioContacto.controls['mensaje'].dirty || formularioContacto.controls['mensaje'].touched) }">
+        
+            <div *ngIf="formularioContacto.controls['mensaje'].invalid && (formularioContacto.controls['mensaje'].dirty || formularioContacto.controls['mensaje'].touched)" class="error-message">
+              <div *ngIf="formularioContacto.controls['mensaje']?.errors?.['required']">Mensaje es requerido.</div>
+            </div>
+          </div> -->
+
+          <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" type="text" id="mensaje" formControlName="mensaje" placeholder="Mensaje" [ngClass]="{ 'invalid-field': formularioContacto.controls['mensaje'].invalid && (formularioContacto.controls['mensaje'].dirty || formularioContacto.controls['mensaje'].touched) }" required></textarea>
+            <div *ngIf="formularioContacto.controls['mensaje'].invalid && (formularioContacto.controls['mensaje'].dirty || formularioContacto.controls['mensaje'].touched)" class="error-message">
+              <div *ngIf="formularioContacto.controls['mensaje']?.errors?.['required']">Mensaje es requerido.</div>
+              <div *ngIf="formularioContacto.controls['mensaje']?.errors?.['maxlength']">Mensaje no cumple con la extensión.</div>
+            </div>
+          </div>
+          <button type="submit" [disabled]="formularioContacto.invalid">Enviar formulario</button>
+        </form>
+        
+    </div>
+  </div>
+</div>
+
+  
