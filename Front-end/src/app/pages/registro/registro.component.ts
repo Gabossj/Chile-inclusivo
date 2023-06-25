@@ -1,6 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder,Validators,AbstractControl} from '@angular/forms';
+import { Router } from '@angular/router';
+import { User } from 'src/app/interfaces/user';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-registro',
@@ -13,7 +16,8 @@ export class RegistroComponent implements OnInit {
   email: AbstractControl;
   password:AbstractControl;
 
-  constructor(private form:FormBuilder) {
+  constructor(private form:FormBuilder, private _userService: UserService,
+    private router: Router) {
     this.formulario=this.form.group({
       usuario:['',Validators.required],
       email:['',[Validators.required,Validators.email]],
@@ -28,7 +32,17 @@ export class RegistroComponent implements OnInit {
   }
 
   registro(){
+    const user: User = {
+      usuario: this.usuario.value,
+      email: this.email.value,
+      password: this.password.value
+    }
 
+    this._userService.registro(user).subscribe({
+      next: (user) =>{
+        this.router.navigate(['./login']);
+      }
+    })
   }
 
 }
