@@ -9,32 +9,30 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteUser = exports.getUserByUsername = exports.getUsers = exports.updateUser = void 0;
+exports.deleteUser = exports.getUsers = void 0;
 const user_1 = require("../models/user");
 // Modificar datos de un usuario por nombre de usuario
-const updateUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { usuario, rol } = req.body;
-    const user = yield user_1.User.findOne({ where: { usuario } });
-    try {
-        if (!user) {
-            return res.status(404).json({
-                msg: 'El usuario no ha sido encontrado'
-            });
-        }
-        user.rol = rol || user.rol;
-        yield user.save();
-        res.json({
-            msg: `Has modificado el rol del usuario de manera exitosa`,
-            data: user
-        });
-    }
-    catch (error) {
-        res.status(500).json({
-            msg: `Hubo un error al modificar el rol del usuario`
-        });
-    }
-});
-exports.updateUser = updateUser;
+// export const updateUser = async (req: Request, res: Response) => {
+//   const { usuario, rol } = req.body;
+//   const user: any = await User.findOne({ where: { usuario } });
+//   try {
+//     if (!user) {
+//       return res.status(404).json({
+//         msg: 'El usuario no ha sido encontrado'
+//       });
+//     }
+//     user.rol = rol || user.rol;
+//     await user.save();
+//     res.json({
+//       msg: `Has modificado el rol del usuario de manera exitosa`,
+//       data: user
+//     });
+//   } catch (error) {
+//     res.status(500).json({
+//       msg: `Hubo un error al modificar el rol del usuario`
+//     });
+//   }
+// };
 // Obtener lista de usuarios
 const getUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -49,29 +47,27 @@ const getUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 });
 exports.getUsers = getUsers;
 // Buscar un usuario por nombre de usuario
-const getUserByUsername = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { username } = req.params;
-    try {
-        const user = yield user_1.User.findOne({ where: { usuario: username } });
-        if (!user) {
-            return res.status(404).json({
-                msg: 'El usuario no ha sido encontrado'
-            });
-        }
-        res.json(user);
-    }
-    catch (error) {
-        res.status(500).json({
-            msg: `Hubo un error al buscar el usuario`
-        });
-    }
-});
-exports.getUserByUsername = getUserByUsername;
+// export const getUserByEmail = async (req: Request, res: Response) => {
+//   const { email } = req.body;
+//   try {
+//     const user = await User.findOne({ where: { email } });
+//     if (!user) {
+//       return res.status(404).json({
+//         msg: 'El correo electronico no ha sido encontrado'
+//       });
+//     }
+//     res.json(user);
+//   } catch (error) {
+//     res.status(500).json({
+//       msg: `Hubo un error al buscar el correo electronico`
+//     });
+//   }
+// };
 // Eliminar un usuario por nombre de usuario
 const deleteUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { username } = req.params;
+    const { usuario } = req.body;
     try {
-        const user = yield user_1.User.findOne({ where: { usuario: username } });
+        const user = yield user_1.User.findOne({ where: { usuario: usuario } });
         if (!user) {
             return res.status(404).json({
                 msg: 'El usuario no ha sido encontrado'
@@ -83,8 +79,9 @@ const deleteUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         });
     }
     catch (error) {
+        console.error('Error al eliminar el usuario', error);
         res.status(500).json({
-            msg: `Hubo un error al eliminar el usuario`
+            msg: `Hubo un error al eliminar el usuario`,
         });
     }
 });

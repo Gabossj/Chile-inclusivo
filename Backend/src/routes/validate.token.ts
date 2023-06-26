@@ -6,65 +6,36 @@ interface CustomRequest extends Request {
   user?: any; // Propiedad user para almacenar la información del usuario decodificado
 }
 
-const validateToken = (req: CustomRequest, res: Response, next: NextFunction) => {
-  const headerToken = req.headers['authorization'];
 
-  console.log("1");
+  const validateToken = (req: CustomRequest, res: Response, next: NextFunction) => {
+    const headerToken = req.headers['authorization'];
 
-  if (headerToken != undefined && headerToken.startsWith('Bearer ')) {
-    try {
-      const bearerToken = headerToken.slice(7);
-      const decodedToken: any = jwt.verify(bearerToken, process.env.SECRET_KEY || 'pepito123');
+    console.log("1");
 
-      if (decodedToken && decodedToken.rol === 'admin') {
-        req.user = decodedToken;
-        next();
-      } else {
-        res.status(403).json({
-          msg: 'Acceso denegado: se requiere el rol de administrador'
+    if (headerToken != undefined && headerToken.startsWith('Bearer ')) {
+      console.log("2");
+      try {
+        const bearerToken = headerToken.slice(7);
+        const decodedToken: any = jwt.verify(bearerToken, process.env.SECRET_KEY || 'pepito123');
+
+        if (decodedToken.rol === 'admin') {
+          req.user = decodedToken;
+          next();
+        } else {
+          res.status(403).json({
+            msg: 'Acceso denegado: se requiere el rol de administrador'
+          });
+        }
+      } catch (error) {
+        res.status(401).json({
+          msg: 'Token no válido'
         });
-      }
-    } catch (error) {
+      } 
+    } else {
       res.status(401).json({
-        msg: 'Token no válido'
+        msg: 'Acceso denegado'
       });
     }
-  } else {
-    res.status(401).json({
-      msg: 'Acceso denegado'
-    });
-  }
-};
-
-  // const validateToken = (req: CustomRequest, res: Response, next: NextFunction) => {
-  //   const headerToken = req.headers['authorization'];
-
-  //   console.log("1");
-
-  //   if (headerToken != undefined && headerToken.startsWith('Bearer ')) {
-  //     console.log("2");
-  //     try {
-  //       const bearerToken = headerToken.slice(7);
-  //       const decodedToken: any = jwt.verify(bearerToken, process.env.SECRET_KEY || 'pepito123');
-
-  //       if (decodedToken.rol === 'admin') {
-  //         req.user = decodedToken;
-  //         next();
-  //       } else {
-  //         res.status(403).json({
-  //           msg: 'Acceso denegado: se requiere el rol de administrador'
-  //         });
-  //       }
-  //     } catch (error) {
-  //       res.status(401).json({
-  //         msg: 'Token no válido'
-  //       });
-  //     } 
-  //   } else {
-  //     res.status(401).json({
-  //       msg: 'Acceso denegado'
-  //     });
-  //   }
-  // };
+  };
 
 export default validateToken;

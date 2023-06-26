@@ -3,32 +3,32 @@ import { User } from '../models/user';
 
 // Modificar datos de un usuario por nombre de usuario
 
-export const updateUser = async (req: Request, res: Response) => {
-  const { usuario, rol } = req.body;
-  const user: any = await User.findOne({ where: { usuario } });
+// export const updateUser = async (req: Request, res: Response) => {
+//   const { usuario, rol } = req.body;
+//   const user: any = await User.findOne({ where: { usuario } });
 
-  try {
+//   try {
 
-    if (!user) {
-      return res.status(404).json({
-        msg: 'El usuario no ha sido encontrado'
-      });
-    }
+//     if (!user) {
+//       return res.status(404).json({
+//         msg: 'El usuario no ha sido encontrado'
+//       });
+//     }
 
-    user.rol = rol || user.rol;
+//     user.rol = rol || user.rol;
 
-    await user.save();
+//     await user.save();
 
-    res.json({
-      msg: `Has modificado el rol del usuario de manera exitosa`,
-      data: user
-    });
-  } catch (error) {
-    res.status(500).json({
-      msg: `Hubo un error al modificar el rol del usuario`
-    });
-  }
-};
+//     res.json({
+//       msg: `Has modificado el rol del usuario de manera exitosa`,
+//       data: user
+//     });
+//   } catch (error) {
+//     res.status(500).json({
+//       msg: `Hubo un error al modificar el rol del usuario`
+//     });
+//   }
+// };
 
 // Obtener lista de usuarios
 export const getUsers = async (req: Request, res: Response) => {
@@ -43,30 +43,30 @@ export const getUsers = async (req: Request, res: Response) => {
 };
 
 // Buscar un usuario por nombre de usuario
-export const getUserByUsername = async (req: Request, res: Response) => {
-  const { username } = req.params;
+// export const getUserByEmail = async (req: Request, res: Response) => {
+//   const { email } = req.body;
 
-  try {
-    const user = await User.findOne({ where: { usuario: username } });
-    if (!user) {
-      return res.status(404).json({
-        msg: 'El usuario no ha sido encontrado'
-      });
-    }
-    res.json(user);
-  } catch (error) {
-    res.status(500).json({
-      msg: `Hubo un error al buscar el usuario`
-    });
-  }
-};
+//   try {
+//     const user = await User.findOne({ where: { email } });
+//     if (!user) {
+//       return res.status(404).json({
+//         msg: 'El correo electronico no ha sido encontrado'
+//       });
+//     }
+//     res.json(user);
+//   } catch (error) {
+//     res.status(500).json({
+//       msg: `Hubo un error al buscar el correo electronico`
+//     });
+//   }
+// };
 
 // Eliminar un usuario por nombre de usuario
 export const deleteUser = async (req: Request, res: Response) => {
-  const { username } = req.params;
+  const { usuario } = req.body;
 
   try {
-    const user = await User.findOne({ where: { usuario: username } });
+    const user = await User.findOne({ where: { usuario: usuario } });
     if (!user) {
       return res.status(404).json({
         msg: 'El usuario no ha sido encontrado'
@@ -79,8 +79,10 @@ export const deleteUser = async (req: Request, res: Response) => {
       msg: `El usuario ha sido eliminado correctamente`
     });
   } catch (error) {
+    console.error('Error al eliminar el usuario', error);
     res.status(500).json({
-      msg: `Hubo un error al eliminar el usuario`
+      msg: `Hubo un error al eliminar el usuario`,
     });
   }
+  
 };

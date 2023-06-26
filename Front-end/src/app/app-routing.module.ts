@@ -10,6 +10,7 @@ import { InvolucrateComponent } from './pages/involucrate/involucrate.component'
 import { OrganizacionComponent } from './pages/organizacion/organizacion.component';
 import { PoliticasComponent } from './pages/politicas/politicas.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { ControlComponent } from './pages/control/control.component';
 
 const routes: Routes = [
   // {path: '', redirectTo: 'inicio', pathMatch: 'full'},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'politicas', component:PoliticasComponent},
   {path:'inicio', component:InicioComponent},
   {path:'registro', component:RegistroComponent},
+  {path:'control', component:ControlComponent},
   // {path: '**', redirectTo: 'inicio', pathMatch: 'full'}
 ];
 

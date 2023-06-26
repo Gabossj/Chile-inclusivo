@@ -14,13 +14,31 @@ export class UserService {
   constructor(private http: HttpClient) {
     this.myAppUrl = environment.endpoint;
     this.myApiUrl = 'api/users'
-   }
+  }
 
    registro(user: User): Observable<any> {
     return this.http.post(`${this.myAppUrl}${this.myApiUrl}`, user);
-   }
+  }
 
    login(user: User): Observable<string> {
     return this.http.post<string>(`${this.myAppUrl}${this.myApiUrl}/login`, user)
-   }
+  }
+
+  getUsers(): Observable<any> {
+    return this.http.get(`${this.myAppUrl}${this.myApiUrl}/control`); 
+  }
+
+  updateUser(usuario: string, rol: string): Observable<any> {
+    return this.http.put(`${this.myAppUrl}${this.myApiUrl}/control`, { rol }); 
+  }
+
+  deleteUser(usuario: string | undefined): Observable<any> {
+    return this.http.delete(`${this.myAppUrl}${this.myApiUrl}/control${usuario}`);
+  }
+
+  getUserByEmail(email: string): Observable<any> {
+    return this.http.get(`${this.myAppUrl}/users/${email}`);
+  }
+
+
 }
