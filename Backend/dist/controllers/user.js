@@ -52,7 +52,7 @@ const newUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 });
 exports.newUser = newUser;
 const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { usuario, email, password } = req.body;
+    const { usuario, email, password, rol } = req.body;
     //validamos si el usuario existe en la bd
     const user = yield user_1.User.findOne({ where: { email } });
     if (!user) {

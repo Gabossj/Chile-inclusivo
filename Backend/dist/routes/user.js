@@ -11,8 +11,8 @@ const router = (0, express_1.Router)();
 // Acceso público usuarios y administradores
 router.post('/', user_1.newUser);
 router.post('/login', user_1.loginUser);
+// router.use(validateToken); // Middleware de validación de token para rutas protegidas
 // Acceso usuarios registrados (requiere autenticación)
-router.use(validate_token_1.default); // Middleware de validación de token para rutas protegidas
 // Acceso usuarios registrados
 router.put('/user/updateData', validate_token_1.default, user_1.updateUser);
 // Acceso administradores

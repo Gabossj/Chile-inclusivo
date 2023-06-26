@@ -49,7 +49,7 @@ export const newUser = async (req: Request, res: Response) => {
 
 export const loginUser = async (req: Request, res: Response) => {
 
-    const { usuario, email, password } = req.body;
+    const { usuario, email, password, rol } = req.body;
     
     //validamos si el usuario existe en la bd
 

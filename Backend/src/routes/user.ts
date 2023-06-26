@@ -9,13 +9,14 @@ const router = Router();
 
 // Acceso público usuarios y administradores
 
+
 router.post('/', newUser);
 
-router.post('/login', loginUser);
+router.post('/login',loginUser);
+
+// router.use(validateToken); // Middleware de validación de token para rutas protegidas
 
 // Acceso usuarios registrados (requiere autenticación)
-
-router.use(validateToken); // Middleware de validación de token para rutas protegidas
 
 // Acceso usuarios registrados
 
