@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteUser = exports.getUsers = void 0;
+exports.getUsers = void 0;
 const user_1 = require("../models/user");
 // Modificar datos de un usuario por nombre de usuario
 // export const updateUser = async (req: Request, res: Response) => {
@@ -64,25 +64,23 @@ exports.getUsers = getUsers;
 //   }
 // };
 // Eliminar un usuario por nombre de usuario
-const deleteUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { usuario } = req.body;
-    try {
-        const user = yield user_1.User.findOne({ where: { usuario: usuario } });
-        if (!user) {
-            return res.status(404).json({
-                msg: 'El usuario no ha sido encontrado'
-            });
-        }
-        yield user.destroy();
-        res.json({
-            msg: `El usuario ha sido eliminado correctamente`
-        });
-    }
-    catch (error) {
-        console.error('Error al eliminar el usuario', error);
-        res.status(500).json({
-            msg: `Hubo un error al eliminar el usuario`,
-        });
-    }
-});
-exports.deleteUser = deleteUser;
+// export const deleteUser = async (req: Request, res: Response) => {
+//   const { usuario } = req.body;
+//   try {
+//     const user = await User.findOne({ where: { usuario: usuario } });
+//     if (!user) {
+//       return res.status(404).json({
+//         msg: 'El usuario no ha sido encontrado'
+//       });
+//     }
+//     await user.destroy();
+//     res.json({
+//       msg: `El usuario ha sido eliminado correctamente`
+//     });
+//   } catch (error) {
+//     console.error('Error al eliminar el usuario', error);
+//     res.status(500).json({
+//       msg: `Hubo un error al eliminar el usuario`,
+//     });
+//   }
+// };

@@ -15,5 +15,5 @@ router.post('/login', user_1.loginUser);
 router.get('/control', admin_1.getUsers);
 // router.get('/', getUsers);
 // router.get('/users/:username', validateToken, getUserByEmail);
-router.delete('/control', admin_1.deleteUser);
+// router.delete('/control', deleteUser);
 exports.default = router;

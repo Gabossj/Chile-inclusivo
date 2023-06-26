@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { loginUser, newUser, updateUser } from '../controllers/user';
 // import { getUsers, getUserByEmail, deleteUser } from '../controllers/admin';
-import { getUsers, deleteUser } from '../controllers/admin';
+import { getUsers } from '../controllers/admin';
 import validateToken from './validate.token';
 
 
@@ -26,6 +26,6 @@ router.get('/control', getUsers);
 
 // router.get('/', getUsers);
 // router.get('/users/:username', validateToken, getUserByEmail);
-router.delete('/control', deleteUser);
+// router.delete('/control', deleteUser);
 
 export default router;
