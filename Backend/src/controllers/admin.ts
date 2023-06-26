@@ -62,27 +62,27 @@ export const getUsers = async (req: Request, res: Response) => {
 // };
 
 // Eliminar un usuario por nombre de usuario
-// export const deleteUser = async (req: Request, res: Response) => {
-//   const { usuario } = req.body;
+export const deleteUser = async (req: Request, res: Response) => {
+  const { usuario } = req.params;
 
-//   try {
-//     const user = await User.findOne({ where: { usuario: usuario } });
-//     if (!user) {
-//       return res.status(404).json({
-//         msg: 'El usuario no ha sido encontrado'
-//       });
-//     }
+  try {
+    const user = await User.findOne({ where: { usuario: usuario } });
+    if (!user) {
+      return res.status(404).json({
+        msg: 'El usuario no ha sido encontrado'
+      });
+    }
 
-//     await user.destroy();
+    await user.destroy();
 
-//     res.json({
-//       msg: `El usuario ha sido eliminado correctamente`
-//     });
-//   } catch (error) {
-//     console.error('Error al eliminar el usuario', error);
-//     res.status(500).json({
-//       msg: `Hubo un error al eliminar el usuario`,
-//     });
-//   }
+    res.json({
+      msg: `El usuario ha sido eliminado correctamente`
+    });
+  } catch (error) {
+    console.error('Error al eliminar el usuario', error);
+    res.status(500).json({
+      msg: `Hubo un error al eliminar el usuario`,
+    });
+  }
   
-// };
+};
