@@ -20,6 +20,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { ControlComponent } from './pages/control/control.component';
+import { RecaptchaService } from './services/recaptcha.service';
 
 
 @NgModule({
