@@ -3,6 +3,7 @@ import {FormGroup,FormBuilder,Validators,AbstractControl} from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/authorization/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   email: AbstractControl;
   password:AbstractControl;
 
-  constructor(private form:FormBuilder, private _userService: UserService, private router: Router) {
+  constructor(private form:FormBuilder, private _userService: UserService, private router: Router, private auth: AuthService) {
     this.formulario=this.form.group({
       email:['',[Validators.required,Validators.email]],
       password: ['', Validators.required]
@@ -35,7 +36,9 @@ export class LoginComponent implements OnInit {
     this._userService.login(user).subscribe({
       next: (response) => {
         const token = JSON.stringify(response); // Convierte el objeto del token a una cadena de texto
+        //ver aqui que hacer
         localStorage.setItem('token', token);
+        this.auth.setToken(token);
         this.router.navigate(['./inicio']);
       }
     });

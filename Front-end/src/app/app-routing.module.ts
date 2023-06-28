@@ -11,13 +11,14 @@ import { OrganizacionComponent } from './pages/organizacion/organizacion.compone
 import { PoliticasComponent } from './pages/politicas/politicas.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { ControlComponent } from './pages/control/control.component';
+import { AuthGuard } from './services/authorizationGuard/auth.guard';
 
 const routes: Routes = [
-  // {path: '', redirectTo: 'inicio', pathMatch: 'full'},
+  {path: '', redirectTo: 'inicio', pathMatch: 'full'},
   {path:'', redirectTo: 'inicio', pathMatch: 'full'},
-  {path:'donacion',component:DonacionComponent},
+  {path:'donacion',component:DonacionComponent, canActivate: [AuthGuard], data: { roles: ['usuarios'] }},
   {path:'login', component:LoginComponent},
-  {path:'contacto', component:ContactoComponent},
+  {path:'contacto', component:ContactoComponent, canActivate: [AuthGuard], data: { roles: ['usuarios'] }},
   {path:'noticias', component:NoticiasComponent},
   {path:'publicaciones', component:PublicacionesComponent},
   {path:'involucrate', component:InvolucrateComponent},
@@ -25,8 +26,8 @@ const routes: Routes = [
   {path:'politicas', component:PoliticasComponent},
   {path:'inicio', component:InicioComponent},
   {path:'registro', component:RegistroComponent},
-  {path:'control', component:ControlComponent},
-  // {path: '**', redirectTo: 'inicio', pathMatch: 'full'}
+  {path:'control', component:ControlComponent, canActivate: [AuthGuard], data: { roles: ['admin'] }},
+  {path: '**', redirectTo: 'inicio', pathMatch: 'full'}
 ];
 
 @NgModule({

@@ -10,9 +10,11 @@ const admin_1 = require("../controllers/admin");
 const admin_2 = require("../controllers/admin");
 const admin_3 = require("../controllers/admin");
 const validate_token_1 = __importDefault(require("./validate.token"));
+const seguridad_1 = require("../controllers/seguridad");
 const router = (0, express_1.Router)();
 // Acceso público usuarios y administradores
-router.post('/', user_1.newUser);
+// router.post('/',newUser);
+router.post('/', seguridad_1.verifyRecaptcha, user_1.newUser);
 router.post('/login', user_1.loginUser);
 // router.use(validateToken); // Middleware de validación de token para rutas protegidas
 // Acceso usuarios registrados (requiere autenticación)

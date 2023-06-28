@@ -7,17 +7,14 @@ import { updateUser_1 } from '../controllers/admin';
 import validateToken from './validate.token';
 import { verifyRecaptcha } from '../controllers/seguridad';
 
-
 const router = Router();
 
 // Acceso público usuarios y administradores
-
 
 // router.post('/',newUser);
 router.post('/', verifyRecaptcha ,newUser);
 
 router.post('/login',loginUser);
-
 
 // router.use(validateToken); // Middleware de validación de token para rutas protegidas
 
@@ -26,7 +23,7 @@ router.post('/login',loginUser);
 // router.put('/user/updateData',updateUser);
 
 // Acceso administradores
-router.get('/control', validateToken,getUsers);
+router.get('/control',validateToken,getUsers);
 router.put('/control:usuario',updateUser_1);
 
 // router.get('/', getUsers);

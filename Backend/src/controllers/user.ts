@@ -75,7 +75,8 @@ export const loginUser = async (req: Request, res: Response) => {
     //generamos token
 
     const token = jwt.sign({
-        rol: user.rol,
+        rol : "usuario",
+        //rol: user.rol,
     }, process.env.SECRET_KEY || 'test', {
         expiresIn: '1hr'
     });
