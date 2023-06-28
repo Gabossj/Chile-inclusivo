@@ -1,45 +1,37 @@
-.wrapper{
-  background-image: url(../../../assets/images/fondoDonaciones.png);
+.wrapper {
+  background: url(../../../assets/images/fondoDonaciones.png) no-repeat center center fixed; 
   background-size: cover;
-  padding: 300px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
 }
 
-
-
 .container {
-    /* Estilos para el contenedor principal */
-    margin: auto;
-    padding: 20px;
-    background-color: #f0f0f0;
-    text-align: center;
+  background-color: rgba($color: #ffffff, $alpha: 0.7);
+  text-align: center;
+  justify-content: center;
+  width: 50%;
+  padding: 20px;
+  margin: 0 auto;
+}
 
-    .eslogan {
-      /* Estilos para el eslogan */
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
-    }
-    
-    .contenedor-donaciones {
-      margin-top: 20px;
-    }
-    .textPolPriv {
-      /* Estilos para el texto de política de privacidad */
-      font-size: 14px;
-      color: #666;
-      margin-top: 20px;
-    }
-    
-    a {
-      /* Estilos para el enlace */
-      color: #007bff;
-      text-decoration: none;
-    }
-    
-    .btn, btn-primary, btn-sm{
-      width: auto;
-      max-height: max-content;
-      padding: auto;
-    }
-  }
-  
+.eslogan {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.textPolPriv {
+  font-size: 14px;
+  color: #666;
+}
+
+a {
+  color: #007bff;
+}
+
+.btn {
+  width: 100%;
+  max-width: 200px;
+  margin: 10px auto;
+}
