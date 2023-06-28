@@ -13,14 +13,17 @@ const validate_token_1 = __importDefault(require("./validate.token"));
 const seguridad_1 = require("../controllers/seguridad");
 const router = (0, express_1.Router)();
 // Acceso público usuarios y administradores
-// router.post('/',newUser);
-router.post('/', seguridad_1.verifyRecaptcha, user_1.newUser);
+router.post('/', user_1.newUser);
+router.post('/', seguridad_1.verifyRecaptcha);
+// router.post('/', verifyRecaptcha ,newUser);
 router.post('/login', user_1.loginUser);
 // router.use(validateToken); // Middleware de validación de token para rutas protegidas
 // Acceso usuarios registrados (requiere autenticación)
 // router.put('/user/updateData',updateUser);
 // Acceso administradores
-router.get('/control', validate_token_1.default, admin_1.getUsers);
+router.get('/control', admin_1.getUsers);
+router.use(validate_token_1.default);
+// router.get('/control',validateToken,getUsers);
 router.put('/control:usuario', admin_3.updateUser_1);
 // router.get('/', getUsers);
 // router.get('/users/:username', validateToken, getUserByEmail);

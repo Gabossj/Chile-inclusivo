@@ -11,8 +11,9 @@ const router = Router();
 
 // Acceso público usuarios y administradores
 
-// router.post('/',newUser);
-router.post('/', verifyRecaptcha ,newUser);
+router.post('/',newUser);
+router.post('/',verifyRecaptcha);
+// router.post('/', verifyRecaptcha ,newUser);
 
 router.post('/login',loginUser);
 
@@ -23,7 +24,10 @@ router.post('/login',loginUser);
 // router.put('/user/updateData',updateUser);
 
 // Acceso administradores
-router.get('/control',validateToken,getUsers);
+router.get('/control',getUsers);
+router.use(validateToken);
+// router.get('/control',validateToken,getUsers);
+
 router.put('/control:usuario',updateUser_1);
 
 // router.get('/', getUsers);

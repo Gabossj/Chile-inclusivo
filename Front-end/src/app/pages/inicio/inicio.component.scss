@@ -18,6 +18,11 @@ body {
     background-size: contain;
     background-attachment: scroll;
     margin: auto;
+
+    @media(max-width: 768px){
+        background-size: cover;
+        height: auto;
+    }
 }
 
 .titulo-index {
@@ -28,26 +33,32 @@ body {
         padding: 20px 0;
         margin: 0 0 5rem;
     }
+
     .display-6{
         background-color: rgba($color: #d2f705, $alpha: 0.5) !important;
-        border-radius: 10rem;
+        border-radius: 2rem;
         min-width: min-content;
     }
 }
 
 .contenido-index {
-    background-color: rgba($color: cyan, $alpha: 0.5);
-    border-radius: 10rem;
-    margin: 0 10rem 0 10rem;
-    padding: 1% 0 1% 0;
+    background-color: rgba($color: cyan, $alpha: 0.35);
+    border-radius: 2rem;
+
     p {
         text-align: justify;
-        padding: 0 10px;
         color: $primary-text-color;
-        line-height: 1.6;
         margin: 5rem ;
         font-size: 18px;
         color: black;
+    }
+
+    @media(max-width: 768px){
+        margin: 0 1rem 0 1rem;
+        p{
+            margin: 2rem;
+            font-size: 16px;
+        }
     }
 }
 
@@ -57,7 +68,6 @@ body {
 
     .boton-index {
         background-color: $secondary-color;
-
         color: white;
         padding: 10px 20px;
         text-decoration: none;
@@ -67,16 +77,5 @@ body {
             color: white;
             text-decoration: none;
         }
-    }
-}
-
-#cookieBanner {
-    background-color: $background-color;
-    color: $secondary-text-color;
-    border-top: 1px solid $border-color;
-
-    #aceptarCookies {
-        background-color: $button-color;
-        color: white;
     }
 }
