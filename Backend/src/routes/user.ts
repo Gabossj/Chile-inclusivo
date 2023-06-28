@@ -25,7 +25,7 @@ router.post('/login',loginUser);
 
 // Acceso administradores
 router.get('/control',getUsers);
-router.use(validateToken);
+
 // router.get('/control',validateToken,getUsers);
 
 router.put('/control:usuario',updateUser_1);

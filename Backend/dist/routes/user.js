@@ -1,7 +1,4 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const user_1 = require("../controllers/user");
@@ -9,7 +6,6 @@ const user_1 = require("../controllers/user");
 const admin_1 = require("../controllers/admin");
 const admin_2 = require("../controllers/admin");
 const admin_3 = require("../controllers/admin");
-const validate_token_1 = __importDefault(require("./validate.token"));
 const seguridad_1 = require("../controllers/seguridad");
 const router = (0, express_1.Router)();
 // Acceso público usuarios y administradores
@@ -22,7 +18,6 @@ router.post('/login', user_1.loginUser);
 // router.put('/user/updateData',updateUser);
 // Acceso administradores
 router.get('/control', admin_1.getUsers);
-router.use(validate_token_1.default);
 // router.get('/control',validateToken,getUsers);
 router.put('/control:usuario', admin_3.updateUser_1);
 // router.get('/', getUsers);
