@@ -15,14 +15,17 @@ export class ContactoComponent {
       nombre: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       asunto: ['', Validators.required],
-      mensaje: ['', [Validators.required, Validators.maxLength(5)]]
+      mensaje: ['', [Validators.required, Validators.maxLength(300)]]
     });
   }
 
   enviarFormulario() {
     if (this.formularioContacto.valid) {
       // Lógica para enviar el formulario
+      alert("Formulario enviado correctamente!");
+      this.formularioContacto.reset();
     } else {
+      alert("Formulario invalido");
       // Muestra un mensaje de error o realiza acciones adicionales si el formulario no es válido
     }
   }
