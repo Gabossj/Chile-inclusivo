@@ -1,6 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import { User } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
+import { EditRolComponent } from '../edit-rol/edit-rol.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-control',
@@ -10,10 +12,8 @@ import { UserService } from 'src/app/services/user.service';
 export class ControlComponent implements OnInit{
 
   public listUsers: User[] = [];
-  // public buscarUsuario: String = '';
 
-  constructor(private _userService: UserService){} 
-
+  constructor(private _userService: UserService, public dialog: MatDialog){} 
 
   ngOnInit(): void {
     this.getUsers();
@@ -26,8 +26,20 @@ export class ControlComponent implements OnInit{
     })
   }
 
-
-  updateUser(usuario: string, rol: string){ 
+  updateUser(usuario: string | undefined, rol: string | undefined): void {
+    if (typeof usuario === 'string' && typeof rol === 'string') {
+      console.log(`Updating user ${usuario} with role ${rol}`);
+      this._userService.updateUser_1(usuario, rol).subscribe(response => {
+        // Actualización exitosa
+        console.log('Response from server:', response);
+        console.log('Rol del usuario actualizado');
+        // Actualizar la lista de usuarios después de la actualización
+        this.getUsers();
+      }, error => {
+        // Manejo de errores en caso de que la actualización falle
+        console.error('Error al actualizar el rol del usuario', error);
+      });
+    }
   }
 
   deleteUser(usuario: string | undefined) {
@@ -43,10 +55,19 @@ export class ControlComponent implements OnInit{
       });
     }
   }
-  
 
   getUserByEmail(email: string){
   }
 
+  openDialog(usuario: string | undefined, rol: string | undefined): void {
+    const dialogRef = this.dialog.open(EditRolComponent, {
+      width: '250px',
+      data: { rol: rol }
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.updateUser(usuario, result);
+    });
+  }
 }

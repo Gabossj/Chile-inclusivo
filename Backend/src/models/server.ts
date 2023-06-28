@@ -3,6 +3,7 @@ import express, { Application } from 'express';
 import routesUser from '../routes/user'
 import cors from 'cors';
 import { User } from './user'
+import { New } from './new';
 
 export class Server{
 
@@ -35,6 +36,7 @@ export class Server{
     async dbConnect(){
         try{
             await User.sync()
+            await New.sync()
         }catch (error){
             console.log('database not found');
         }

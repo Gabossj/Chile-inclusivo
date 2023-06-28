@@ -15,8 +15,8 @@
           <td>{{ user.email }}</td>
           <td>{{ user.rol }}</td>
           <td>
-            <!-- <button class="btn btn-warning" (click)="updateUser(user.usuario, newRol)">Modificar</button> -->
-            <button class="btn btn-danger" (click)="deleteUser(user.usuario)">Eliminar</button>
+            <button type="submit" class="btn btn-outline-warning btn-sm" (click)="openDialog(user.usuario, user.rol)">Modificar</button>
+            <button type="button" class="btn btn-outline-danger btn-sm" (click)="deleteUser(user.usuario)">Eliminar</button>
           </td>
         </tr>
         <tr *ngIf="listUsers.length === 0">
@@ -24,8 +24,8 @@
           </tr>
       </tbody>
     </table>
-    <!-- <input class="form-control" placeholder="Buscar por correo electrónico..." [(ngModel)]="searchText">
-    <button class="btn btn-info mt-2" (click)="searchUserByEmail(searchText)">Buscar</button> -->
+     <!-- <input class="form-control" placeholder="Buscar por correo electrónico..." [(ngModel)]="searchText"> -->
+     <!--<button class="btn btn-info mt-2" (click)="searchUserByEmail(searchText)">Buscar</button> -->
   </div>
 
   

@@ -70,19 +70,20 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
     //generamos token
     const token = jsonwebtoken_1.default.sign({
-        email: email
+        rol: user.rol,
     }, process.env.SECRET_KEY || 'test', {
-        expiresIn: '100000'
+        expiresIn: '1hr'
     });
     res.json({ token });
 });
 exports.loginUser = loginUser;
 const updateUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { usuario, email, password } = req.body;
+    const { usuario, email, password, rol } = req.body;
     const user = yield user_1.User.findOne({ where: { usuario } });
     if (user) {
         user.usuario = usuario || user.usuario;
         user.email = email || user.email;
+        user.rol = rol || user.rol;
         if (password) {
             user.password = yield bcrypt_1.default.hash(password, 10);
         }

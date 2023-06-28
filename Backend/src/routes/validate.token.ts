@@ -5,8 +5,6 @@ import jwt from 'jsonwebtoken';
 interface CustomRequest extends Request {
   user?: any; // Propiedad user para almacenar la información del usuario decodificado
 }
-
-
   const validateToken = (req: CustomRequest, res: Response, next: NextFunction) => {
     const headerToken = req.headers['authorization'];
 
@@ -18,7 +16,7 @@ interface CustomRequest extends Request {
         const bearerToken = headerToken.slice(7);
         const decodedToken: any = jwt.verify(bearerToken, process.env.SECRET_KEY || 'pepito123');
 
-        if (decodedToken.rol === 'admin') {
+        if (decodedToken.rol === 'rol') {
           req.user = decodedToken;
           next();
         } else {

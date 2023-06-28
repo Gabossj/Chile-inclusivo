@@ -20,6 +20,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { ControlComponent } from './pages/control/control.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { EditRolComponent } from './pages/edit-rol/edit-rol.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -40,13 +45,18 @@ import { ControlComponent } from './pages/control/control.component';
     OrganizacionComponent,
     RegistroComponent,
     ControlComponent,
+    EditRolComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

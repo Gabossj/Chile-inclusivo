@@ -12,7 +12,7 @@ const validateToken = (req, res, next) => {
         try {
             const bearerToken = headerToken.slice(7);
             const decodedToken = jsonwebtoken_1.default.verify(bearerToken, process.env.SECRET_KEY || 'pepito123');
-            if (decodedToken.rol === 'admin') {
+            if (decodedToken.rol === 'rol') {
                 req.user = decodedToken;
                 next();
             }

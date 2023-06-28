@@ -29,12 +29,17 @@ export class UserService {
   }
 
   updateUser(usuario: string, rol: string): Observable<any> {
+    return this.http.put(`${this.myAppUrl}${this.myApiUrl}/control`, { usuario, rol }); 
+  }
+
+  updateUser_1(usuario: string, rol: string): Observable<any> {
     return this.http.put(`${this.myAppUrl}${this.myApiUrl}/control`, { rol }); 
   }
 
   deleteUser(usuario: string | undefined): Observable<any> {
     return this.http.delete(`${this.myAppUrl}${this.myApiUrl}/control${usuario}`);
   }
+
 
   getUserByEmail(email: string): Observable<any> {
     return this.http.get(`${this.myAppUrl}/users/${email}`);

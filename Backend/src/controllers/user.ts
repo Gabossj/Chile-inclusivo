@@ -75,21 +75,22 @@ export const loginUser = async (req: Request, res: Response) => {
     //generamos token
 
     const token = jwt.sign({
-        email: email
+        rol: user.rol,
     }, process.env.SECRET_KEY || 'test', {
-        expiresIn: '100000'
+        expiresIn: '1hr'
     });
 
     res.json({token});
 }
 
 export const updateUser = async (req: Request, res: Response) => {
-    const { usuario, email, password} = req.body;
+    const { usuario, email, password,rol} = req.body;
     const user: any = await User.findOne({ where: { usuario} });
 
     if(user){
         user.usuario = usuario || user.usuario;
         user.email = email || user.email;
+        user.rol = rol || user.rol;
 
         if(password){
             user.password = await bcrypt.hash(password,10);
