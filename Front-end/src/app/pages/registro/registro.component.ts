@@ -1,9 +1,9 @@
-
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder,Validators,AbstractControl} from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
+import { RecaptchaService } from '../../services/recaptcha.service';
 
 @Component({
   selector: 'app-registro',
@@ -17,7 +17,7 @@ export class RegistroComponent implements OnInit {
   password:AbstractControl;
 
   constructor(private form:FormBuilder, private _userService: UserService,
-    private router: Router) {
+    private router: Router, private recaptchaService: RecaptchaService) {
     this.formulario=this.form.group({
       usuario:['',Validators.required],
       email:['',[Validators.required,Validators.email]],
@@ -28,8 +28,12 @@ export class RegistroComponent implements OnInit {
     this.password=this.formulario.controls['password'];
    }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
+    this.recaptchaService.loadScript()
+      .then(() => console.log('Script cargado.'))
+      .catch(() => console.error('Error al cargar el script.'));
   }
+  
 
   registro(){
     const user: User = {

@@ -5,6 +5,7 @@ import { getUsers } from '../controllers/admin';
 import { deleteUser } from '../controllers/admin';
 import { updateUser_1 } from '../controllers/admin';
 import validateToken from './validate.token';
+import { verifyRecaptcha } from '../controllers/seguridad';
 
 
 const router = Router();
@@ -12,7 +13,8 @@ const router = Router();
 // Acceso público usuarios y administradores
 
 
-router.post('/', newUser);
+// router.post('/',newUser);
+router.post('/', verifyRecaptcha ,newUser);
 
 router.post('/login',loginUser);
 
